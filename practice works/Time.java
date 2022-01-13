@@ -1,9 +1,16 @@
-import java.time.format.DateTimeFormatter;  
-import java.time.LocalDateTime;    
-public class Time {    
-  public static void main(String[] args) {    
-   DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
-   LocalDateTime now = LocalDateTime.now();  
-   System.out.println(dtf.format(now));  
-  }    
-}    
+/**
+* @author Anmol Guragain
+* @since 13 Jan 2022
+*/
+import java.util.Scanner;
+import java.util.List;
+public class Time{
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int a;
+        a = sc.nextInt();
+        System.out.println(a);
+
+    }
+
+}
