@@ -4,17 +4,24 @@
 */
 import java.util.Scanner;
 import java.util.List;
-public class Swap {
+public class Swap{
     public static void main(String[] args) {
        // int, double, float
-     int a, b;
-     a = 15;
-     b = 27;
-     System.out.println("Before swapping : a, b = "+a+", "+ + b);
-     a = a + b;
-     b = a - b;
-     a = a - b;
-     System.out.println("After swapping : a, b = "+a+", "+ + b);
-   }
+      int id;
+      String name, course , labcomponent, program;
+      Scanner sc = new Scanner(System.in);
+      System.out.println(" Enter the student ID ");
+      id = sc.nextInt();
+      System.out.println("Enter Student Name:  ");
+      name = sc.nextLine();
+      System.out.println("Enter the name of course: ");
+      course = sc.nextLine();
+      System.out.println("Enter the lab component:  ");
+      labcomponent = sc.nextLine();
+      System.out.println("Course was registered successfully ");
+    }
    
-  }
+}
+
+
+
