@@ -6,23 +6,26 @@ createdby @Anmol2059
 
 */
 import java.io.*;
-import java.io.File;
+//import java.io.File;
+//import javafx.event.ActionEvent;
+//import javafx.event.EventHandler;
+// import javafx.geometry.HPos;
+// import javafx.geometry.Insets;
+// import javafx.geometry.Pos;
+// import javafx.stage.FileChooser;
+// import javafx.stage.Stage;
+// import javafx.stage.Window;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.HPos;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.event.*;
+import javafx.geometry.*;
+import javafx.stage.*;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.*;
 import javafx.scene.layout.*;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.stage.Window;
+import javafx.scene.text.*;
+
+
 
 public class App extends Application {
 
@@ -68,7 +71,7 @@ public class App extends Application {
 
         //for text label and field
         Label nameLabel = new Label("Your  Name : ");
-        myGridPane.add(nameLabel, 0,1);
+        myGridPane.add(nameLabel, 0, 1);
 
         
         TextField nameField = new TextField();
