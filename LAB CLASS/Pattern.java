@@ -14,14 +14,14 @@ public class Pattern {
         System.out.println("Enter the number of Rows: ");
         row = sc.nextInt(); //taking Input as rows
         
-        while(row<3){
+        while(row<3){   //Row should be greater than 3 was the condition
             System.out.println("You entered row less than 3, please enter a greater value: ");
             row = sc.nextInt();
 
         }
         int col=row+1;  //column is always 1 times greater than row
 
-        
+
         /* This is task number 2 of given assignment */
         for (int i = 0; i < row; i++) {     //initializing for loop for each rows
             for (int j = 0; j <= col; j++) {   //nested for loop for each columns

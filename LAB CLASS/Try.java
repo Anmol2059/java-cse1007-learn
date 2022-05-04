@@ -6,27 +6,27 @@ import java.util.*;
 
 
 
-class GenericsTest<X>{
+class GenericClass<X>{
     private String gender;
     private String group;
     private String prepStattus;
-    private X maths;
-    private X read;
-    private X write;
+    private T maths;
+    private T read;
+    private T write;
     
     
-    public X getmaths(){
+    public T getmaths(){
         return maths;
     }
-    public X getread(){
+    public T getread(){
          return read;
     }
-    public X getwrite(){
+    public T getwrite(){
         return write;
     }
     
     //making a parameterizedconstructor
-    public GenericsTest(String gender, String group,String prepStattus, X maths, X read,X write){	 	  	 		      	 	   	    	  	       	 	
+    public GenericClass(String gender, String group,String prepStattus, T maths, T read,T write){	 	  	 		      	 	   	    	  	       	 	
         this.gender=gender;
         this.group=group;
         this.prepStattus= prepStattus;
@@ -36,7 +36,7 @@ class GenericsTest<X>{
         
         
     }
-    public static GenericsTest<Integer> parseString(String str) throws Exception{
+    public static GenericClass<Integer> parseString(String str) throws Exception{
         String[] values = str.split(",");
         
         if(values.length != 6){
@@ -51,30 +51,30 @@ class GenericsTest<X>{
         Integer read = Integer.parseInt(values[4]);
                     Integer write = Integer.parseInt(values[5]);
         
-        return new GenericsTest<Integer>(gender, group, prepStattus, 
+        return new GenericClass<Integer>(gender, group, prepStattus, 
                 maths, read, write);
     }
 
     
     public void compare(int sub){
-        int acquired;
+        int gotMarks;
         
         if(sub == 1){
-            acquired = (Integer) maths;
+            gotMarks = (Integer) maths;
         }else if(sub == 2){
-            acquired = (Integer) read;
+            gotMarks = (Integer) read;
         }else{
-            acquired = (Integer) write;
+            gotMarks = (Integer) write;
         }
 
         if(prepStattus.equals("none") ){
-            if(acquired > 70){
+            if(gotMarks > 70){
                 System.out.println("Marks is good");
             }else{
                 System.out.println("Needs to study harder");
             }
         }else{
-            if(acquired > 80){
+            if(gotMarks > 80){
                 System.out.println("Marks is good");
             }else{
                 System.out.println("Needs to study harder");
@@ -84,12 +84,12 @@ class GenericsTest<X>{
     }   
 }
 
-public class Test{
+public class Try{
 
     
 
     public static void main(String[] args) {
-        List<GenericsTest<Integer>> details = null;
+        List<GenericClass<Integer>> detailedMarks = null;
         try(
             BufferedReader br=new BufferedReader(
             new InputStreamReader(
@@ -98,19 +98,19 @@ public class Test{
                 openStream() ) );
         ){
             String s;
-            details = new ArrayList<>();
-            GenericsTest<Integer> temporary;
+            detailedMarks = new ArrayList<>();
+            GenericClass<Integer> tempVariable;
             
             while((s= br.readLine())!= null){	
                 try{ 	  	 		      	 	   	    	  	       	 	
-                    temporary = GenericsTest.parseString(s);
-                    details.add(temporary);
+                    tempVariable = GenericClass.parseString(s);
+                    detailedMarks.add(tempVariable);
                 }catch(Exception e){
                     System.out.println(e.getMessage() );
                 }
-            }//whileloop
+            }
             
-        }//try ends here
+        }
         catch(Exception e){
             System.out.println("Couldn'tread from the file"+ e.getMessage());
         }
@@ -120,10 +120,10 @@ public class Test{
         Scanner sc = new Scanner(System.in);
 
         
-        System.out.print("Enter index to compare marks " + details.size() + " :: ");
+        System.out.print("Enter index to compare marks " + detailedMarks.size() + " :: ");
         int index = Integer.parseInt(sc.nextLine() );
 
-        GenericsTest<Integer> row = details.get(index);
+        GenericClass<Integer> row = detailedMarks.get(index);
 
         Random rd = new Random();
 
